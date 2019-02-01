@@ -26,6 +26,8 @@ html(lang='en')
           .datetime.hide
             h2.date
             h1.time
+        h1.name
+          | Ray Trommelen
         .corner.right
           .weather.hide
             h2.summary
@@ -37,7 +39,7 @@ html(lang='en')
               span.unit
               | &nbsp;
               span.apparent
-                | Feels like&nbsp;
+                | Voelt als&nbsp;
                 span.apparentTemperature
                 | &deg;
                 span.unit
@@ -46,10 +48,10 @@ html(lang='en')
           .help.code
             .links
               a(href='/now/app/config')
-                | settings 
+                | settings
                 i.fas.fa-sliders-h.fa-sm
               a(href='https://github.com/JasonPuglisi/descent' target='_blank')
-                | source 
+                | source
                 i.fab.fa-github.fa-sm
             .menuItem
               a(href='#' onclick='processKey({ keyCode: 87 }); return false;')

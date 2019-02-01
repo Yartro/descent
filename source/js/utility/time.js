@@ -27,7 +27,7 @@ function getCurrentDate(date) {
     day: 'numeric'
   };
 
-  return date.toLocaleDateString('en-US', options);
+  return date.toLocaleDateString('nl', options);
 }
 
 function getCurrentTime(date) {

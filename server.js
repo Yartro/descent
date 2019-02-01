@@ -154,7 +154,7 @@ app.post('/now/app/weather', (req, res) => {
   let units = decodeURIComponent(req.body.units);
 
   let dsKey = process.env.DARK_SKY_KEY;
-  let owmKey = process.env.OPENWEATHERMAP_KEY;
+  let owmKey = '97af4126c70644c58d42dbb26b4aa340';
 
   if (dsKey)
     getWeatherDarkSky(dsKey, lat, lon, units, (err, weather) => {
@@ -301,7 +301,7 @@ function getWeatherOpenweathermap(key, lat, lon, units, callback) {
   let urlLat = encodeURIComponent(lat);
   let urlLon = encodeURIComponent(lon);
   let urlUnits = encodeURIComponent(units);
-  let url = `http://api.openweathermap.org/data/2.5/weather?lat=${urlLat}&lon=${urlLon}&units=${urlUnits}&appid=${key}`;
+  let url = `http://api.openweathermap.org/data/2.5/weather?lat=${urlLat}&lon=${urlLon}&units=${urlUnits}&appid=${key}&lang=nl`;
 
   request(url, (err, res, body) => {
     if (err || res.statusCode != 200)
@@ -337,7 +337,7 @@ function getWeatherOpenweathermap(key, lat, lon, units, callback) {
         + 0.3965 * data.main.temp * Math.pow(data.wind.speed, 0.16);
 
     let weather = new Weather(true);
-    weather.summary = `${data.weather[0].description} currently`;
+    weather.summary = `${data.weather[0].description} momenteel`;
     weather.summary = `${weather.summary.substring(0, 1).toUpperCase()}${weather.summary.substring(1)}`;
     weather.temperature = Math.round(data.main.temp);
     weather.apparentTemperature = Math.round(apparent);

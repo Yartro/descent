@@ -106,7 +106,7 @@ function updateCover(cover) {
   resources.cover.onload = () => {
     // Apply cover image to background if required
     if (getBackgroundType() == 'album')
-      $('.background').css('background-image', `url(${url}`);
+      $('.background').css('background-image', `url(${'https://wallpapercave.com/wp/wp1947167.jpg'}`);
 
     // Apply cover image to preview if it exists
     if (cover !== '')
@@ -124,7 +124,7 @@ function resetBackground() {
     url = resources.cover.src;
   else
     url = getDefaultBackground();
-  $('.background').css('background-image', `url(${url}`);
+  $('.background').css('background-image', `url(${'https://wallpapercave.com/wp/wp1947167.jpg'}`);
 }
 
 function getBackgroundType() {
@@ -227,6 +227,8 @@ function resetColors() {
 }
 
 function getDefaultBackground() {
+  console.warn('getdefault')
+  console.warn(Cookies.get('defaultBackground'))
   return Cookies.get('defaultBackground') || getBlankImageData();
 }
 
