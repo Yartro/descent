@@ -96,14 +96,18 @@ h2 {
 
 .corner.left {
   text-align: left;
+  flex: 1;
 }
 
 .corner.right {
   text-align: right;
+  flex: 1;
 }
 
 .name {
   margin: 0 auto;
+  flex: 1;
+  text-align: center;
 }
 
 .cover {
